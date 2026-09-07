@@ -16,7 +16,7 @@ Simple Library Information System built using Laravel.
 1. Clone repository
 
 ```bash
-git clone https://github.com/username/library-system.git
+git clone https://github.com/amirulSanz17/library-system.git
 ```
 
 2. Masuk ke folder project
