@@ -9,6 +9,18 @@ class BookController extends Controller
     // Menampilkan Daftar Buku
     public function index()
     {
-        return view('books.index');
+        $title = "Daftar Buku";
+        $description = "Berikut adalah daftar buku yang tersedia";
+        $books = [
+            'pemrograman PHP',
+            'pemrograman web untuk pemula'
+        ];
+
+        return view('books.index', compact ('title', 'description', 'books'));
+    }
+
+    public function show ($id)
+    {
+        return "ID Buku: " . $id;
     }
 }

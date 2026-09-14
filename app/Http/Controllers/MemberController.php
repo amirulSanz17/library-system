@@ -6,9 +6,16 @@ use Illuminate\Http\Request;
 
 class MemberController extends Controller
 {
-    // Menambpilkan daftar member
-        public function index()
+    // Menampilkan daftar member
+    public function index()
     {
-        return view('members.index');
+        $title = "Daftar Member Perpustakaan";
+        $description = "Berikut adalah daftar member perpustakaan";
+        $members = [
+            'Ahmad Fahmi Hidayat',
+            'Amirul Ichsandina'
+        ];
+
+        return view('members.index', compact ('title', 'description', 'members'));
     }
 }

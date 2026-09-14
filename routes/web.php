@@ -9,9 +9,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Routing for books, members, and categories
-Route::get('/books', [BookController::class, 'index']);
+// Routing untuk books, members, and categories
+Route::get('/books', [BookController::class, 'index'])
+->name('buku');
 
-Route::get('/members', [MemberController::class, 'index']);
+Route::get('/books/{id}', [BookController::class, 'show']);
 
-Route::get('/categories', [CategoryController::class, 'index']);
+Route::get('/members', [MemberController::class, 'index'])
+->name('member');
+
+Route::get('/categories', [CategoryController::class, 'index'])
+->name('kategori');
