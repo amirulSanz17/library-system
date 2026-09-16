@@ -10,7 +10,10 @@ class DashboardController extends Controller
     public function index()
     {
         $title = "Selamat Datang di Sistem Informasi Perpustakaan";
+        $description = "Ini adalah halaman dashboard untuk sistem informasi perpustakaan.";
 
-        return view('dashboard.index', compact ('title'));
+        $jumlahBuku = 5;
+        $jumlahMember = 5;
+        return view('dashboard.index', compact ('title', 'description', 'jumlahBuku', 'jumlahMember'));
     }
 }
