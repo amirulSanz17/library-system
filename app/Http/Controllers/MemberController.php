@@ -13,9 +13,17 @@ class MemberController extends Controller
         $description = "Berikut adalah daftar member perpustakaan";
         $members = [
             'Ahmad Fahmi Hidayat',
-            'Amirul Ichsandina'
+            'Amirul Ichsandina',
+            'Jajang Nur Jaman',
+            'Asep Baliho',
+            'Nanang Mulyadi'
         ];
 
         return view('members.index', compact ('title', 'description', 'members'));
+    }
+
+    public function show ($id)
+    {
+        return "ID member: " . $id;
     }
 }

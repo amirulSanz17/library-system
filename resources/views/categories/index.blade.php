@@ -6,8 +6,8 @@
 
 <ul>
     <h2> Daftar Kategori Buku</h2>
-    @foreach ($categories as $categories)
-        <li>{{ $categories }} </li>
+    @foreach ($categories as $category)
+        <li>{{ $category }} </li>
     @endforeach
 </ul>
 @endsection

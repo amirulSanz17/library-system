@@ -13,7 +13,10 @@ class CategoryController extends Controller
         $description = "Berikut adalah daftar kategori buku yang tersedia";
         $categories = [
             'Pemrograman',
-            'Web Development'
+            'Web Development',
+            'Cloud Computing',
+            'AI',
+            'Networking'
         ];
 
         return view('categories.index', compact ('title', 'description', 'categories'));

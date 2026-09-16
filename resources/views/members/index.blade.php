@@ -6,8 +6,8 @@
 
 <ul>
     <h2> Daftar Member Perpustakaan</h2>
-    @foreach ($members as $members)
-        <li>{{ $members }} </li>
+    @foreach ($members as $member)
+        <li>{{ $member }} </li>
     @endforeach
 </ul>
 @endsection
