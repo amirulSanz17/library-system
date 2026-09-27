@@ -10,9 +10,10 @@
 <ul>
     @foreach ($books as $index => $book)
         <li>
-            <b>{{ $book['judul'] }}</b><br>
-            Penulis: {{ $book['penulis'] }}<br>
-            Tahun Terbit: {{ $book['tahun_terbit'] }}
+            <b>{{ $book->title }}</b><br>
+            Penulis: {{ $book->author }}<br>
+            Tahun Terbit: {{ $book->year }}
+            stok: {{ $book->stock }}
         </li>
         <br>
     @endforeach

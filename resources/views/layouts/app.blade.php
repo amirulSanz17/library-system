@@ -12,6 +12,7 @@
     </header>
 
     <nav>
+        <a href="{{ route('dashboard') }}">Dashboard</a> |
         <a href="{{ route('buku') }}">Buku</a> |
         <a href="{{ route('member') }}">Member</a> |
         <a href="{{ route('kategori') }}">Kategori</a>
