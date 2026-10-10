@@ -6,24 +6,15 @@ use App\Http\Controllers\MemberController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Routing untuk dashboard
+Route::get('/', [DashboardController::class, 'index'])
+->name('dashboard');
 
 // Routing untuk books
-Route::get('/books', [BookController::class, 'index'])
-->name('buku');
-Route::get('/books/{id}', [BookController::class, 'show']);
+Route::resource('books', BookController::class);
 
 // Routing untuk members
-Route::get('/members', [MemberController::class, 'index'])
-->name('member');
-Route::get('/members/{id}', [MemberController::class, 'show']);
+Route::resource('members', MemberController::class);
 
 // Routing untuk categories
-Route::get('/categories', [CategoryController::class, 'index'])
-->name('kategori');
-
-// Routing untuk dashboard
-Route::get('/dashboard', [DashboardController::class, 'index'])
-->name('dashboard');
+Route::resource('categories', CategoryController::class);

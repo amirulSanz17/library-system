@@ -13,9 +13,9 @@
 
     <nav>
         <a href="{{ route('dashboard') }}">Dashboard</a> |
-        <a href="{{ route('buku') }}">Buku</a> |
-        <a href="{{ route('member') }}">Member</a> |
-        <a href="{{ route('kategori') }}">Kategori</a>
+        <a href="{{ route('books.index') }}">Buku</a> |
+        <a href="{{ route('members.index') }}">Member</a> |
+        <a href="{{ route('categories.index') }}">Kategori</a>
     </nav>
 
     <main>
