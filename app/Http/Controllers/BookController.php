@@ -43,7 +43,7 @@ class BookController extends Controller
 
     // Menyimpan Perubahan Data Buku
     public function update(Request $request, Book $book)
-    {   
+    {
         $book->update([
             'title' => $request->title,
             'author' => $request->author,

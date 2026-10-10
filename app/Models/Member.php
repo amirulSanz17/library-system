@@ -12,4 +12,9 @@ class Member extends Model
         'email',
         'address',
     ];
+
+    public function borrowings(): HasMany
+    {
+        return $this->hasMany(Borrowing::class);
+    }
 }
