@@ -1,3 +1,7 @@
+@extends('layouts.app')
+@section('content')
+
+<h2>Edit Buku</h2>
 <form action="{{ route('books.update', $book) }}" method="POST">
     @csrf
     @method('PUT')
@@ -11,3 +15,4 @@
         Update
     </button>
 </form>
+@endsection
