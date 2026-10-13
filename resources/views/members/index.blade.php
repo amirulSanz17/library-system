@@ -7,6 +7,10 @@
 <h2>Daftar Member Perpustakaan</h2>
 <p>{{ $description }}</p>
 
+    @if (session('success'))
+        <p> {{ session('success') }}<p>
+    @endif
+
 <a href="{{ route ('members.create') }}">Tambah Member Perpustakaan</a>
 
 <table border="1" cellpadding="8" cellspacing="0">

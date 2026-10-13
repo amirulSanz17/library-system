@@ -6,10 +6,33 @@
     @csrf
     @method('PUT')
 
-    <input type="text" name="title" value="{{ $book->title }}">
-    <input type="text" name="author" value="{{ $book->author }}">
-    <input type="number" name="year" value="{{ $book->year }}">
-    <input type="number" name="stock" value="{{ $book->stock }}">
+    <div>
+        <input type="text" name="title" value="{{ old('title', $book->title) }}">
+        @error('title')
+            <p style="color: red;">{{ $message }}</p>
+        @enderror
+    </div>
+
+    <div>
+        <input type="text" name="author" value="{{ old('author', $book->author) }}">
+        @error('author')
+            <p style="color: red;">{{ $message }}</p>
+        @enderror
+    </div>
+
+    <div>
+        <input type="text" name="year" value="{{ old('year', $book->year) }}">
+        @error('year')
+            <p style="color: red;">{{ $message }}</p>
+        @enderror
+    </div>
+    
+    <div>
+        <input type="text" name="stock" value="{{ old('stock', $book->stock) }}">
+        @error('stock')
+            <p style="color: red;">{{ $message }}</p>
+        @enderror
+    </div>
 
     <button type="submit">
         Update

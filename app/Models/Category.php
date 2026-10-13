@@ -10,10 +10,11 @@ class Category extends Model
     //
     protected $fillable =[
         'name',
+        'categories'
     ];
 
-    public function books(): HasMany
-    {
-        return $this->hasMany(Book::class);
-    }
+    // public function books(): HasMany
+    // {
+    //     return $this->hasMany(Book::class);
+    // }
 }

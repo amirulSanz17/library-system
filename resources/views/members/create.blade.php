@@ -5,9 +5,26 @@
 <form action="{{ route('members.store') }}" method="POST">
     @csrf
 
-    <input type="text" name="name" placeholder="Nama Member">
-    <input type="text" name="email" placeholder="Email Member">
-    <input type="text" name="address" placeholder="Alamat Member">
+    <div>
+    <input type="text" name="name" placeholder="Nama Member" value ="{{ old('name') }}">
+        @error('name')
+            <p style="color: red;">{{ $message }}</p>
+        @enderror
+    </div>
+
+    <div>
+    <input type="text" name="email" placeholder="Email" value ="{{ old('email') }}">
+        @error('email')
+            <p style="color: red;">{{ $message }}</p>
+        @enderror
+    </div>
+
+    <div>
+    <input type="text" name="address" placeholder="Alamat" value ="{{ old('address') }}">
+        @error('address')
+            <p style="color: red;">{{ $message }}</p>
+        @enderror
+    </div>
 
     <button type="submit">
         Simpan
