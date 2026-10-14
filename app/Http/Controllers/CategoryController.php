@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    // // Menambpilkan Kategori Buku
+    // Menambpilkan Kategori Buku
     public function index()
     {
         $title = "Daftar Kategori";
@@ -16,4 +16,18 @@ class CategoryController extends Controller
 
         return view('categories.index', compact ('title', 'description', 'categories'));
     }
+
+    public function create ()
+    {
+        return view ('categories.create');
+    }
+
+    public function store (Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+        ]);
+    }
+
 }

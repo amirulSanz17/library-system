@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -20,13 +21,15 @@ class BookController extends Controller
     // Menampilkan Forrm Tambah Buku
     public function create()
     {
-        return view('books.create');
+        $categories = Category::all();
+        return view('books.create', compact('categories'));
     }
 
     // Menyimpan Data Buku Baru
     public function store(Request $request)
     {
         $validated = $request->validate([
+            'category_id' => 'required|exists:categories,id',
             'title' => 'required|string|max:255',
             'author' => 'required|string|max:255',
             'year' => 'required|integer|min:1900',
@@ -42,13 +45,15 @@ class BookController extends Controller
     // Menampilkan Form Edit Buku
     public function edit(Book $book)
     {
-        return view('books.edit', compact('book'));
+        $categories = Category::all();
+        return view('books.edit', compact('book', 'categories'));
     }
 
     // Menyimpan Perubahan Data Buku
     public function update(Request $request, Book $book)
     {   
         $validated = $request->validate([
+            'category_id' => 'required|exists:categories,id',
             'title' => 'required|string|max:255',
             'author' => 'required|string|max:255',
             'year' => 'required|integer|min:1900',
