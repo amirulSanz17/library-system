@@ -6,28 +6,32 @@
     @csrf
     @method('PUT')
 
-    <div>
+    <div style = "margin-bottom: 10px;">
+        <label for = "title"> Judul Buku </label>
         <input type="text" name="title" value="{{ old('title', $book->title) }}">
         @error('title')
             <p style="color: red;">{{ $message }}</p>
         @enderror
     </div>
 
-    <div>
+    <div style = "margin-bottom: 10px;">
+        <label for="author"> Penulis Buku </label>
         <input type="text" name="author" value="{{ old('author', $book->author) }}">
         @error('author')
             <p style="color: red;">{{ $message }}</p>
         @enderror
     </div>
 
-    <div>
+    <div style = "margin-bottom: 10px;">
+        <label for="year"> Tahun Terbit </label>
         <input type="text" name="year" value="{{ old('year', $book->year) }}">
         @error('year')
             <p style="color: red;">{{ $message }}</p>
         @enderror
     </div>
     
-    <div>
+    <div style = "margin-bottom: 10px;">
+        <label for="stock"> Stok Buku </label>
         <input type="text" name="stock" value="{{ old('stock', $book->stock) }}">
         @error('stock')
             <p style="color: red;">{{ $message }}</p>
