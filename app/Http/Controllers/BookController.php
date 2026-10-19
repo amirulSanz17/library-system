@@ -13,15 +13,15 @@ class BookController extends Controller
     {
         $title = "Daftar Buku";
         $description = "Berikut adalah daftar buku yang tersedia";
-        $books = Book::all();
+        $books = Book::with('category')->get();
         
         return view('books.index', compact ('title', 'description', 'books'));
     }
 
-    // Menampilkan Forrm Tambah Buku
+    // Menampilkan Form Tambah Buku
     public function create()
     {
-        $categories = Category::all();
+        $categories = Category::orderBy('name')->get();
         return view('books.create', compact('categories'));
     }
 
@@ -45,7 +45,7 @@ class BookController extends Controller
     // Menampilkan Form Edit Buku
     public function edit(Book $book)
     {
-        $categories = Category::all();
+        $categories = Category::orderBy('name')->get();
         return view('books.edit', compact('book', 'categories'));
     }
 

@@ -29,7 +29,7 @@
         @foreach ($books as $book)
         <tr>
             <td>{{ $book->title }}<td>
-            <td>{{ $book->category->name }}<td>
+            <td>{{ $book->category?->name ?? 'Belum ada kategori' }}<td>
             <td>{{ $book->author }}<td>
             <td>{{ $book->year }}<td>
             <td>{{ $book->stock }}<td>

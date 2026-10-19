@@ -8,10 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Category extends Model
 {
     //
-    protected $fillable =[
-        'name',
-        'description'
-    ];
+    protected $fillable = ['name'];
 
     // Relasi satu kategori memiliki banyak buku
     public function books(): HasMany
