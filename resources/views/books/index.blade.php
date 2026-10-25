@@ -17,6 +17,7 @@
     <thead>
         <tr>
             <th> Judul <th>
+            <th> Kategori Buku <th>
             <th> Penulis <th>
             <th> Tahun Terbit<th>
             <th> Stok<th>
@@ -28,6 +29,7 @@
         @foreach ($books as $book)
         <tr>
             <td>{{ $book->title }}<td>
+            <td>{{ $book->category?->name ?? 'Belum ada kategori' }}<td>
             <td>{{ $book->author }}<td>
             <td>{{ $book->year }}<td>
             <td>{{ $book->stock }}<td>

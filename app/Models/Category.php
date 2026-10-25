@@ -8,13 +8,11 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Category extends Model
 {
     //
-    protected $fillable =[
-        'name',
-        'categories'
-    ];
+    protected $fillable = ['name'];
 
-    // public function books(): HasMany
-    // {
-    //     return $this->hasMany(Book::class);
-    // }
+    // Relasi satu kategori memiliki banyak buku
+    public function books(): HasMany
+    {
+        return $this->hasMany(Book::class);
+    }
 }

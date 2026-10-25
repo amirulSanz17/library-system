@@ -14,19 +14,9 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         //
-        Category::create([
-            'name' => 'IT',
-            'description' => 'Kategori Buku mengenai dunia IT'
-        ]);
-
-        Category::create([
-            'name' => 'Finance',
-            'description' => 'Kategori Buku mengenai dunia Finance'
-        ]);
-
-        Category::create([
-            'name' => 'Foods',
-            'description' => 'Kategori Buku mengenai dunia Foods'
-        ]);
+        $names = ['Finance', 'Healthy', 'Nerworking', 'Programming', 'Data', 'Science', 'Economy'];
+        foreach ($names as $name){
+            Category::create(['name'=> $name]);
+        }
     }
 }
