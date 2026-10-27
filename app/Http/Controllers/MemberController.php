@@ -26,12 +26,16 @@ class MemberController extends Controller
     // Menyimpan Data Member Baru
     public function store(Request $request)
     {
-        Member::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'address' => $request->address,
+        $validated = $request->validate ([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|max:255',
+            'address' => 'required|string|max:255',
         ]);
-        return redirect()->route('members.index');
+
+        Member::create($validated);
+        return redirect()
+        ->route('members.index')
+        ->with('success', 'Data Member Baru Berhasil Ditambahkan');
     }
 
     // Menampilkan Form Edit Member
@@ -43,18 +47,24 @@ class MemberController extends Controller
     // Menyimpan Perubahan Data Member
     public function update(Request $request, Member $member)
     {   
-        $member->update([
-            'name' => $request->name,
-            'email' => $request->email,
-            'address' => $request->address,
+        $validated = $request->validate ([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|max:255',
+            'address' => 'required|string|max:255',
         ]);
-        return redirect()->route('members.index');
+
+        $member->update($validated);
+        return redirect()
+        ->route('members.index')
+        ->with('success', 'Data Member Baru Berhasil Diperbarui');
     }
 
     // Menghapus Data Member
     public function destroy(Member $member)
     {
         $member->delete();
-        return redirect()->route('members.index');
+        return redirect()
+        ->route('members.index')
+        ->with('success', 'Data Member berhasil Dihapus');
     }
 }

@@ -8,8 +8,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Book extends Model
 {
-    //
+    // 
     protected $fillable = [
+        'category_id',
         'title',
         'author',
         'year',

@@ -4,6 +4,10 @@
 
 @section('content')
 
+    @if (session('success'))
+        <p> {{ session('success') }}<p>
+    @endif
+
 <h2>Daftar Buku</h2>
 <p>{{ $description }}</p>
 
@@ -13,6 +17,7 @@
     <thead>
         <tr>
             <th> Judul <th>
+            <th> Kategori Buku <th>
             <th> Penulis <th>
             <th> Tahun Terbit<th>
             <th> Stok<th>
@@ -24,6 +29,7 @@
         @foreach ($books as $book)
         <tr>
             <td>{{ $book->title }}<td>
+            <td>{{ $book->category?->name ?? 'Belum ada kategori' }}<td>
             <td>{{ $book->author }}<td>
             <td>{{ $book->year }}<td>
             <td>{{ $book->stock }}<td>
