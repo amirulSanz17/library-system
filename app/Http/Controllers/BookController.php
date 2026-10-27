@@ -51,13 +51,12 @@ class BookController extends Controller
 
     // Menyimpan Perubahan Data Buku
     public function update(Request $request, Book $book)
-    {   
-        $validated = $request->validate([
-            'category_id' => 'required|exists:categories,id',
-            'title' => 'required|string|max:255',
-            'author' => 'required|string|max:255',
-            'year' => 'required|integer|min:1900',
-            'stock' => 'required|integer|min:0',
+    {
+        $book->update([
+            'title' => $request->title,
+            'author' => $request->author,
+            'year' => $request->year,
+            'stock' => $request->stock,
         ]);
 
         $book->update($validated);
